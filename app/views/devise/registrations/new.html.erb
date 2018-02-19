@@ -2,38 +2,31 @@
   <div class="view">
     <div class="left">
     <h1> <strong> uniform </strong> </h1>
-
-    <h2> L'inscription devient plus simple </h2>
     <hr>
     <ul>
-      <li> Un seul formulaire pour toutes les écoles</li>
-      <li> Gérer facilement vos candidatures </li>
-      <li> Stockez vos données scolaires </li>
+      <li> <i class="far fa-file"></i> Un seul formulaire pour toutes les écoles</li>
+      <li> <i class="fas fa-graduation-cap"></i> Gérer facilement vos candidatures </li>
+      <li> <i class="fas fa-cloud"></i> Stockez vos données scolaires </li>
     </ul>
   </div>
     <div class="right">
 
        <div class= "form">
+          <p>Entrez vos identifiants</p>
 
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= devise_error_messages! %>
 
         <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Adresse email" %>
         </div>
 
         <div class="field">
-          <%= f.label :password %>
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "off" %>
+          <%= f.password_field :password, autocomplete: "off", placeholder: "Mot de passe (6 caractères minimum)" %>
         </div>
 
         <div class="field">
-          <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirmez votres mot de passe" %>
         </div>
 
         <div class="actions">
